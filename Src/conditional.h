@@ -57,7 +57,7 @@ public:
   ConditionalFilter(PClip _child, PClip _source1, PClip _source2, AVSValue  _condition1, AVSValue  _evaluator, AVSValue  _condition2, bool _show, IScriptEnvironment* env);
   PVideoFrame __stdcall GetFrame(int n, IScriptEnvironment* env);
   void __stdcall GetAudio(void* buf, __int64 start, __int64 count, IScriptEnvironment* env);
-
+  int __stdcall SetCacheHints(int cachehints, int frame_range);
 private:
   PClip source1;
   PClip source2;

@@ -226,3 +226,7 @@ PVideoFrame __stdcall ConditionalFilter::GetFrame(int n, IScriptEnvironment* env
 void __stdcall ConditionalFilter::GetAudio(void* buf, __int64 start, __int64 count, IScriptEnvironment* env) {
   source1->GetAudio(buf, start, count, env);
 }
+
+int __stdcall ConditionalFilter::SetCacheHints(int cachehints, int frame_range) {
+	return cachehints == CachePolicyHint::CACHE_GET_MTMODE ? MT_NICE_FILTER : 0;
+}
